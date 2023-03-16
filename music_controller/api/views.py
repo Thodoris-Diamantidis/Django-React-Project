@@ -12,7 +12,8 @@ We can take advantage of Django REST Framework's built-in generic views
 to handle these operations automatically.
 """
 #Anything related to GenericAPIView : https://www.django-rest-framework.org/api-guide/generic-views/#genericapiview
-class RoomView(generics.CreateAPIView):
+#IF instead of generics.ListAPIView i used CreateAPIView it will also let me add a room instead of only showing the rooms 
+class RoomView(generics.ListAPIView):
     #Specifies the queryset that the view will use.
     queryset = Room.objects.all()
     #Specifies the serializer class that the view will use to serialize the incoming data
